@@ -4,7 +4,7 @@
     <!-- Metadata dasar untuk responsivitas dan karakter -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pannellum Tour 0..23</title>
+    <title>Pannellum Tour 0..25</title>
     
     <!-- Pannellum: library untuk panorama 360° -->
     <link rel="stylesheet" href="https://unpkg.com/pannellum/build/pannellum.css" />
@@ -16,9 +16,9 @@
     <div class="app">
         <!-- Sidebar navigasi scene -->
         <aside id="sidebar">
-            <h1>Virtual Tour (0 → 23)</h1>
+            <h1>Virtual Tour (0 → 25)</h1>
             <p class="meta">
-                Letakkan file panorama equirectangular di <code>./image/</code> dengan nama <code>1.jpg</code> sampai <code>23.jpg</code>.<br>
+                Letakkan file panorama equirectangular di <code>./image/</code> dengan nama <code>0.jpg</code> sampai <code>25.jpg</code>.<br>
                 Gunakan grid untuk lompat scene atau tombol panah untuk maju/mundur.
             </p>
             <div id="sceneGrid" class="grid"></div>
@@ -34,8 +34,8 @@
 
     <script>
         // === Bagian konfigurasi scene ===
-        const START_INDEX = 1;   // Nomor scene pertama
-        const END_INDEX = 23;    // Nomor scene terakhir
+        const START_INDEX = 0;   // Nomor scene pertama
+        const END_INDEX = 25;    // Nomor scene terakhir
 
         // Fungsi path file panorama berdasarkan nomor
         const panoPath = (i) => `assets/360_images/image${i}.jpg`;
