@@ -1,11 +1,578 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tur Virtual Rumah Adat Luwu 0–25 (no loops)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <link rel="stylesheet" href="styles/vtour.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
 </head>
 <body>
-    Hi! Rumah Adat Luwu
+<div class="top-bar">
+  <a href="index.html" class="go-home">← Kembali ke Beranda</a>
+  <h3 class="page-title">Tur Virtual Rumah Adat Luwu (Scenes 0 → 25)</h3>
+  <div class="top-bar__actions">
+    <button class="minimap-btn" onclick="showMinimap()">Tampilkan Minimap</button>
+    <button id="toggleDragBtn" class="minimap-btn">Nonaktifkan Drag</button>
+  </div>
+</div>
+
+<!-- Modal Minimap -->
+<div id="minimapModal" class="minimap-modal" onclick="hideMinimap()">
+  <img src="assets/images/main_img.jpg" alt="Minimap Virtual Tour" class="minimap-img">
+</div>
+
+<div id="panorama"></div>
+<div class="scenes">
+  <!-- Static scene buttons without any loop -->
+  <button onclick="viewer.loadScene('s0')">0</button>
+  <button onclick="viewer.loadScene('s1')">1</button>
+  <button onclick="viewer.loadScene('s2')">2</button>
+  <button onclick="viewer.loadScene('s3')">3</button>
+  <button onclick="viewer.loadScene('s4')">4</button>
+  <button onclick="viewer.loadScene('s5')">5</button>
+  <button onclick="viewer.loadScene('s6')">6</button>
+  <button onclick="viewer.loadScene('s7')">7</button>
+  <button onclick="viewer.loadScene('s8')">8</button>
+  <button onclick="viewer.loadScene('s9')">9</button>
+  <button onclick="viewer.loadScene('s10')">10</button>
+  <button onclick="viewer.loadScene('s11')">11</button>
+  <button onclick="viewer.loadScene('s12')">12</button>
+  <button onclick="viewer.loadScene('s13')">13</button>
+  <button onclick="viewer.loadScene('s14')">14</button>
+  <button onclick="viewer.loadScene('s15')">15</button>
+  <button onclick="viewer.loadScene('s16')">16</button>
+  <button onclick="viewer.loadScene('s17')">17</button>
+  <button onclick="viewer.loadScene('s18')">18</button>
+  <button onclick="viewer.loadScene('s19')">19</button>
+  <button onclick="viewer.loadScene('s20')">20</button>
+  <button onclick="viewer.loadScene('s21')">21</button>
+  <button onclick="viewer.loadScene('s22')">22</button>
+  <button onclick="viewer.loadScene('s23')">23</button>
+  <button onclick="viewer.loadScene('s24')">24</button>
+  <button onclick="viewer.loadScene('s25')">25</button>
+</div>
+
+<script>
+
+  // function renderAlertHotspot(hotSpotDiv, args) {
+  //   hotSpotDiv.classList.add('custom-hotspot');
+
+  //   if (args) {
+  //     const tooltip = document.createElement('span');
+  //     tooltip.textContent = args;
+  //     hotSpotDiv.appendChild(tooltip);
+  //   }
+  // }
+
+  /*
+    // === Generator otomatis hotspot ===
+    // const LAST_SCENE_INDEX = 53;
+    // const scenes = {};
+    // for (let i = 0; i <= LAST_SCENE_INDEX; i += 1) {
+    //   const sceneId = `s${i}`;
+    //   const entry = {
+    //     title: `Spot ${i}`,
+    //     type: "equirectangular",
+    //     panorama: `panos/image${i}.jpg`
+    //   };
+    //   if (i < LAST_SCENE_INDEX) {
+    //     entry.hotSpots = [{
+    //       pitch: 0,
+    //       yaw: 0,
+    //       type: "scene",
+    //       sceneId: `s${i + 1}`,
+    //       text: `Ke Spot ${i + 1}`
+    //     }];
+    //   }
+    //   scenes[sceneId] = entry;
+    // }
+    // var viewer = pannellum.viewer('panorama', {
+    //   "default": {
+    //     "firstScene": "s0",
+    //     "autoLoad": true,
+    //     "showControls": true
+    //   },
+    //   "scenes": scenes
+    // });
+  */
+
+  // === Konfigurasi manual dengan hotspot eksplisit ===
+  var viewer = pannellum.viewer('panorama', {
+    "default": {
+      "firstScene": "s0",
+      "autoLoad": true,
+      "showControls": true
+    },
+    "scenes": {
+      "s0":  { "title": "Gerbang Masuk ",  
+      "type": "equirectangular", 
+      "panorama": "assets/360_images/image0.jpg",  
+      "hotSpots": [
+        { 
+            "pitch": -10.65, 
+            "yaw": 3, 
+            "type": "scene", 
+            "sceneId": "s1",
+            "text": "Ke Spot 1" 
+        },
+        {
+            "pitch": 3,
+            "yaw": 6,
+            "type": "info",
+            "text":"Rumah Adat Luwu",
+        },
+        {
+            "pitch": -0.55,
+            "yaw": 50.40,
+            "type": "info",
+            "text": "Pohon Pisang",
+        },
+        {
+            "pitch": -1.16,
+            "yaw": -35.75,
+            "type": "info",
+            "text": "Halaman"
+        }] 
+    },
+      "s1":  { 
+        "title": "Halaman Depan",  
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image1.jpg",  
+        "hotSpots": [
+            {   "pitch": -11.83, 
+                "yaw": -2.91, 
+                "type": "scene", 
+                "sceneId": "s2",  
+                "text": "Ke Spot 2" 
+            }] 
+        },
+      "s2":  { 
+        "title": "Beranda Rumah",  
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image2.jpg",  
+        "hotSpots": [
+            {   "pitch": -11.40, 
+                "yaw": -87.99, 
+                "type": "scene", 
+                "sceneId": "s3",  
+                "text": "Ke Spot 3" 
+            },
+            {   "pitch": -9.42, 
+                "yaw": 37.56, 
+                "type": "scene", 
+                "sceneId": "s5",  
+                "text": "Ke Spot 5" 
+            },
+            {   "pitch": -11.17, 
+                "yaw": -0.11, 
+                "type": "scene", 
+                "sceneId": "s7",  
+                "text": "Ke Spot 7" 
+            }] 
+        },
+      "s3":  { 
+        "title": "Halaman Samping Kiri",
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image3.jpg",  
+        "hotSpots": [
+            {   "pitch": -5.29, 
+                "yaw": -6.41, 
+                "type": "scene", 
+                "sceneId": "s4",  
+                "text": "Ke Spot 4" 
+            },
+            {
+                "pitch": 20.05,
+                "yaw": 13.81,
+                "type": "info",
+                "text": "Atap (Sambung / Bubungan) memiliki makna sebagai simbol hubungan vertikal manusia dengan Tuhan, serta kebesaran bangsawan Luwu."
+        }] 
+        },
+      "s4":  { 
+        "title": "Halaman Samping Kiri",  
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image4.jpg",  
+        "hotSpots": [
+            {   "pitch": 0, 
+                "yaw": 0, 
+                "type": "scene", 
+                "sceneId": "s20",  
+                "text": "Ke Spot 20" 
+            },
+            {
+            "pitch": 32.32,
+            "yaw": 42.41,
+            "type": "info",
+            "text": "Bentuk utama bangunan melambangkan keteraturan dan keharmonisan hidup masyarakat Luwu.",
+            }] 
+        },
+      "s5":  { 
+        "title": "Halaman Samping Kanan",  
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image5.jpg",  
+        "hotSpots": [
+            {   "pitch": -7.31, 
+                "yaw": 9.46, 
+                "type": "scene", 
+                "sceneId": "s6",  
+                "text": "Ke Spot 6" 
+            }] 
+        },
+      "s6":  { 
+        "title": "Halaman Samping Kanan",  
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image6.jpg",  
+
+        },
+      "s7":  { 
+        "title": "Tangga Depan",  
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image7.jpg",  
+        "hotSpots": [
+            {   "pitch": 10.03, 
+                "yaw": 2.15, 
+                "type": "scene", 
+                "sceneId": "s8",  
+                "text": "Ke Spot 8" 
+            }] }
+            ,
+      "s8":  { 
+        "title": "Teras Depan",  
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image8.jpg",  
+        "hotSpots": [
+            {   "pitch": -18.28, 
+                "yaw": 0.13, 
+                "type": "scene", 
+                "sceneId": "s9",  
+                "text": "Ke Spot 9"  
+            }] 
+        },
+      "s9":  { 
+        "title": "Pintu Masuk",  
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image9.jpg",  
+        "hotSpots": [
+            {   "pitch": -14.52, 
+                "yaw": -1.12, 
+                "type": "scene", 
+                "sceneId": "s10", 
+                "text": "Ke Spot 10" 
+            }] 
+        },
+      "s10": { 
+        "title": "Ruang Tengah", 
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image10.jpg", 
+        "hotSpots": [
+            {   "pitch": -16.80, 
+                "yaw": -106.58, 
+                "type": "scene", 
+                "sceneId": "s11", 
+                "text": "Ke Spot 11" 
+            },
+            {   "pitch": -23.32, 
+                "yaw": -42.32, 
+                "type": "scene", 
+                "sceneId": "s13", 
+                "text": "Ke Spot 13" 
+            },
+            {   "pitch": -9.40, 
+                "yaw": -38.86, 
+                "type": "scene", 
+                "sceneId": "s14", 
+                "text": "Ke Spot 14" 
+            },
+            {   "pitch": -5.22, 
+                "yaw": -17.19, 
+                "type": "scene", 
+                "sceneId": "s16", 
+                "text": "Ke Spot 16" 
+            }] 
+        },
+      "s11": { 
+        "title": "Ruang Tamu", 
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image11.jpg", 
+        "hotSpots": [
+            {   "pitch": -34.93, 
+                "yaw": -44.27, 
+                "type": "scene", 
+                "sceneId": "s12", 
+                "text": "Ke Spot 12" 
+            }] 
+        },
+      "s12": { 
+        "title": "Ruang Tamu", 
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image12.jpg", 
+        },
+      "s13": { 
+        "title": "Ruang Tengah", 
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image13.jpg", 
+        "hotSpots": [
+            {   "pitch": -12.44, 
+                "yaw": 50.31, 
+                "type": "scene", 
+                "sceneId": "s14", 
+                "text": "Ke Spot 14" 
+            },
+            {   "pitch": -10.86, 
+                "yaw": 86.38, 
+                "type": "scene", 
+                "sceneId": "s16", 
+                "text": "Ke Spot 16" 
+            }] 
+        },
+      "s14": { 
+        "title": "Pintu Ruang Tidur", 
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image14.jpg", 
+        "hotSpots": [
+            {   "pitch": -26.27, 
+                "yaw": 7.68, 
+                "type": "scene", 
+                "sceneId": "s15", 
+                "text": "Ke Spot 15"   
+            }] 
+        },
+      "s15": { 
+        "title": "Ruang Tidur", 
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image15.jpg", 
+         },
+      "s16": { 
+        "title": "Spot 16", 
+        "type": "equirectangular", 
+        "pitch": -12.21, 
+        "yaw": 112.47, 
+        "panorama": "assets/360_images/image16.jpg", 
+        "hotSpots": [
+            {   "pitch": -18.01, 
+                "yaw": 56.88, 
+                "type": "scene", 
+                "sceneId": "s17", 
+                "text": "Ke Spot 17" 
+            }] },
+      "s17": { 
+        "title": "Dapur", 
+        "type": "equirectangular", 
+        "pitch": -20.65, 
+        "yaw": -1.70, 
+        "panorama": "assets/360_images/image17.jpg", 
+        "hotSpots": [
+            {  "pitch": -29.03, 
+                "yaw": -35.67, 
+                "type": "scene", 
+                "sceneId": "s18", 
+                "text": "Ke Spot 18" 
+            }] 
+        },
+      "s18": { 
+        "title": "Pintu Belakang", 
+        "type": "equirectangular", 
+        "pitch": -35.95, 
+        "yaw": -1.08, 
+        "panorama": "assets/360_images/image18.jpg", 
+        "hotSpots": [
+            {   "pitch": -41.57, 
+                "yaw": -0.07, 
+                "type": "scene", 
+                "sceneId": "s19", 
+                "text": "Ke Spot 19" 
+            }] 
+        },
+      "s19": { 
+        "title": "Tangga Belakang", 
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image19.jpg", 
+        },
+      "s20": { 
+        "title": "Tiang Sudut Depan", 
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image20.jpg", 
+        "hotSpots": [
+            {   "pitch": -8.18, 
+                "yaw": 1.95, 
+                "type": "scene", 
+                "sceneId": "s21", 
+                "text": "Ke Spot 21" 
+            }] 
+        },
+      "s21": { 
+        "title": "Kolong Rumah", 
+        "type": "equirectangular", 
+        "panorama": "assets/360_images/image21.jpg", 
+        "hotSpots": [
+            {   "pitch": -9.39, 
+                "yaw": -39.56, 
+                "type": "scene", 
+                "sceneId": "s22", 
+                "text": "Ke Spot 22" 
+            }] 
+        },
+      "s22": { 
+        "title": "Samping Belakang", 
+        "type": "equirectangular", 
+        "pitch": -12.40, 
+        "yaw": 0.20, 
+        "panorama": "assets/360_images/image22.jpg", 
+        "hotSpots": [
+            {   "pitch": -28.13, 
+                "yaw": 9.29, 
+                "type": "scene", 
+                "sceneId": "s23", 
+                "text": "Ke Spot 23" 
+            }] 
+        },
+      "s23": { 
+        "title": "Samping Belakang", 
+        "type": "equirectangular", 
+        "pitch": 14.13, 
+        "yaw": 122.67, 
+        "panorama": "assets/360_images/image23.jpg", 
+        "hotSpots": [
+            {   "pitch": 0.95, 
+                "yaw": -173.66, 
+                "type": "scene", 
+                "sceneId": "s24", 
+                "text": "Ke Spot 24" 
+            }] 
+        },
+      "s24": { 
+        "title": "Halaman Samping", 
+        "type": "equirectangular", 
+        "pitch": 16.56, 
+        "yaw": 11.66,
+        "panorama": "assets/360_images/image24.jpg", 
+        "hotSpots": [
+            {   "pitch": -3.96, 
+                "yaw": 96.43, 
+                "type": "scene", 
+                "sceneId": "s25", 
+                "text": "Ke Spot 25" 
+            }] 
+        },
+      "s25": { 
+        "title": "Rumah Adat Luwu", 
+        "type": "equirectangular", 
+         "pitch": 2.94, 
+        "yaw": -11.55,
+        "panorama": "assets/360_images/image25.jpg",
+        },
+    }
+  });
+
+  // Fungsi untuk menampilkan modal minimap
+  function showMinimap() {
+    document.getElementById('minimapModal').classList.add('active');
+  }
+  function hideMinimap() {
+    document.getElementById('minimapModal').classList.remove('active');
+  }
+
+  // === Menampilkan koordinat pitch dan yaw saat panorama di-klik ===
+  const panoramaEl = document.getElementById('panorama');
+  const coordDiv = document.createElement('div');
+  coordDiv.className = 'coord-hint';
+  coordDiv.textContent = 'Klik panorama untuk koordinat';
+  if (panoramaEl) {
+    panoramaEl.appendChild(coordDiv);
+  } else {
+    document.body.appendChild(coordDiv);
+  }
+  const toggleBtn = document.getElementById('toggleDragBtn');
+  const viewerContainer = typeof viewer.getContainer === 'function'
+    ? viewer.getContainer()
+    : panoramicFallback();
+
+  let dragEnabled = true;
+
+  function panoramicFallback() {
+    return panoramaEl.querySelector('.pnlm-container') || panoramaEl;
+  }
+
+  function setCoordHint(message) {
+    coordDiv.textContent = message;
+  }
+
+  function showCoords(event) {
+    const coords = viewer.mouseEventToCoords(event);
+    if (coords && Number.isFinite(coords.yaw) && Number.isFinite(coords.pitch)) {
+      coordDiv.textContent = `Yaw: ${coords.yaw.toFixed(2)}, Pitch: ${coords.pitch.toFixed(2)}`;
+    } else {
+      const fallbackYaw = typeof viewer.getYaw === 'function' ? viewer.getYaw() : NaN;
+      const fallbackPitch = typeof viewer.getPitch === 'function' ? viewer.getPitch() : NaN;
+      if (Number.isFinite(fallbackYaw) && Number.isFinite(fallbackPitch)) {
+        coordDiv.textContent = `Yaw: ${fallbackYaw.toFixed(2)}, Pitch: ${fallbackPitch.toFixed(2)}`;
+      } else {
+        setCoordHint('Tidak dapat membaca koordinat');
+      }
+    }
+  }
+
+  function handlePointer(event) {
+    if (!dragEnabled) {
+      showCoords(event);
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  }
+
+  function handleScroll(event) {
+    if (!dragEnabled) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  }
+
+  const wheelListenerOptions = { capture: true, passive: false };
+
+  function disableDrag() {
+    dragEnabled = false;
+    panoramaEl.style.cursor = 'pointer';
+    viewerContainer.style.cursor = 'pointer';
+    viewerContainer.addEventListener('mousedown', handlePointer, true);
+    viewerContainer.addEventListener('touchstart', handlePointer, true);
+    viewerContainer.addEventListener('click', handlePointer, true);
+    viewerContainer.addEventListener('touchend', handlePointer, true);
+    viewerContainer.addEventListener('wheel', handleScroll, wheelListenerOptions);
+    toggleBtn.textContent = 'Aktifkan Drag';
+    setCoordHint('Mode koordinat aktif — klik panorama');
+  }
+
+  function enableDrag() {
+    dragEnabled = true;
+    panoramaEl.style.cursor = 'grab';
+    viewerContainer.style.cursor = 'grab';
+    viewerContainer.removeEventListener('mousedown', handlePointer, true);
+    viewerContainer.removeEventListener('touchstart', handlePointer, true);
+    viewerContainer.removeEventListener('click', handlePointer, true);
+    viewerContainer.removeEventListener('touchend', handlePointer, true);
+    viewerContainer.removeEventListener('wheel', handleScroll, wheelListenerOptions);
+    toggleBtn.textContent = 'Nonaktifkan Drag';
+    setCoordHint('Klik panorama untuk koordinat');
+  }
+
+  toggleBtn.onclick = function() {
+    if (dragEnabled) {
+      disableDrag();
+    } else {
+      enableDrag();
+    }
+  };
+
+  // Set cursor awal dan pesan bawaan
+  enableDrag();
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.hotspot-alert.is-open').forEach((node) => node.classList.remove('is-open'));
+  });
+</script>
+
 </body>
 </html>

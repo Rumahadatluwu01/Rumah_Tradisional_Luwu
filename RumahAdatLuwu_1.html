@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tur Virtual Rumah Adat Luwu 0–25 (no loops)</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
-    <link rel="stylesheet" href="css/luwu.css">
+    <link rel="stylesheet" href="styles/luwu.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 </head>
 <body>
 <div class="top-buttons">
   <a href="index.html" class="back-home">Kembali ke Beranda</a>
+    <button class="minimap-btn" onclick="showMinimap()">Tampilkan Minimap</button>
     <button id="toggleDragBtn" class="minimap-btn">Nonaktifkan Drag</button>
+</div>
+
+<div id="minimapModal" class="minimap-modal" onclick="hideMinimap()">
+  <img src="assets/images/main_img.jpg" alt="Minimap Virtual Tour" class="minimap-img">
 </div>
 
 <h3>Tur Virtual Rumah Adat Luwu (Scenes 0 → 25)</h3>
