@@ -164,3 +164,14 @@ footer {
   padding: 28px 16px;
 }
 
+.bibliography {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.bibliography li {
+  margin-bottom: 10px;
+  /* Indentasi gantung (hanging indent) untuk format APA */
+  text-indent: -25px;
+  padding-left: 25px;
+}
