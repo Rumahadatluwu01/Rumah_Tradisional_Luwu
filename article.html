@@ -76,30 +76,45 @@
             border-left: 4px solid var(--color-text-muted);
             padding-left: 10px;
         }
-        .content h4 {
-            margin-top: 30px;
+        .content h4 { /* Sub-Sub Bagian: Contoh Perhitungan */
+            margin-top: 25px;
             color: var(--color-text-light);
-            font-size: 1.2em; /* Mengurangi sedikit ukuran untuk sub-heading */
-            border-left: 4px solid var(--color-text-muted);
-            padding-left: 10px;
+            font-size: 1.1em;
+            text-decoration: underline;
         }
 
         /* Formula dan Kode */
-        .math-formula p {
-            margin: 0 0 10px 0;
-        }
         .math-formula pre, .pre-code {
             background-color: #2a2a2a;
             padding: 15px;
-            border-left: 5px solid var(--color-accent-formula);
-            margin: 10px 0;
+            border-left: 5px solid #126d2b; /* Warna aksen berbeda untuk formula */
+            margin: 20px 0;
             overflow-x: auto;
             border-radius: 4px;
             color: #dcdcdc;
             font-family: monospace;
             font-size: 0.9em;
-            white-space: pre-wrap; /* Memastikan baris kode tidak melebar terlalu jauh */
-            word-wrap: break-word;
+        }
+        
+          /* Style tambahan untuk MathJax (LaTeX) di dalam block */
+        .math-formula .math-display {
+            display: block;
+            text-align: center;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        
+        /* Formula dan Kode */
+        .math-formula, .pre-code {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-left: 5px solid #ffaa00; /* Warna aksen berbeda untuk formula */
+            margin: 20px 0;
+            overflow-x: auto;
+            border-radius: 4px;
+            color: #dcdcdc;
+            font-family: monospace;
+            font-size: 0.9em;
         }
 
         /* Gambar dan Panorama */
@@ -254,19 +269,25 @@
 
             <h4>Contoh Penghitungan Luas Segitiga Sama Kaki</h4>
             <div class="math-formula">
-                <p>Untuk menghitung luas segitiga sama kaki, kita dapat menggunakan rumus luas segitiga:</p>
+            <p>Untuk menghitung luas segitiga sama kaki, kita dapat menggunakan rumus luas segitiga:</p>
+                <div class="math-display">
                 <pre><code>L = 1/2 * a * t</code></pre>
+                </div> 
+
                 <p>Dimana:</p>
                 <ul>
                     <li><strong>L</strong> = Luas Segitiga</li>
                     <li><strong>a</strong> = Alas</li>
                     <li><strong>t</strong> = Tinggi (jarak dari puncak ke dasar)</li>
                 </ul>
-            </div>
-            <p>Misalnya, jika alas atap adalah 6 meter, tinggi 6 meter, maka:</p>
-            <pre class="pre-code"><code>L = 1/2 * 6 * 6 = 18 meter kuadrat</code></pre>
-            <p>Dengan demikian, luas segitiga sama kaki adalah 18 meter kuadrat. Ini adalah contoh aplikasi geometri untuk menghitung luas di bagian atap Luwu.</p>
 
+            <p>Misalnya, jika alas atap adalah 6 meter, tinggi 6 meter, maka:</p>
+            <div class="math-display">
+            <pre class="pre-code"><code>L = 1/2 * 6 * 6 = 18 meter kuadrat</code></pre>
+            </div>
+            <p>Dengan demikian, luas segitiga sama kaki adalah 18 meter kuadrat. Ini adalah contoh aplikasi geometri untuk menghitung luas di bagian atap Luwu.</p>
+            </div>
+            
             <h3>2.B Aspek Simetri dan Keseimbangan Struktur dalam Rumah Adat Luwu</h3>
             <p>Rumah Adat Langkanae memiliki susunan elemen yang memperlihatkan prinsip simetri, baik secara horizontal maupun vertikal. Simetri ini bukan hanya berfungsi estetika, tetapi juga menegaskan konsep keseimbangan dan harmoni yang dijunjung tinggi dalam budaya Luwu. Keseimbangan antarbagian bangunan mencerminkan nilai kesetaraan dalam kehidupan sosial serta keseimbangan antara manusia dan alam.</p>
 
@@ -278,12 +299,17 @@
 
             <h4>Contoh Simetri dalam Struktur Tata Letak Tiang Penyangga </h4>
             <div class="math-formula">
-                <p>Untuk mendesain jarak antar tiang penyangga agar seimbang, kita dapat menggunakan konsep simetri. Dengan menggunakan rumus simetri, kita bisa mengetahui keseimbangan tiang agar tetap simetris di kedua sisi.</p>
+            <p>Untuk mendesain jarak antar tiang penyangga agar seimbang, kita dapat menggunakan konsep simetri. Dengan menggunakan rumus simetri, kita bisa mengetahui keseimbangan tiang agar tetap simetris di kedua sisi.</p>
+            <div class="math-display">
                 <pre><code>Jarak tiang ke-i dari sumbu tengah ke sisi kiri = Jarak tiang ke-i dari sumbu tengah ke sisi kanan.</code></pre>
             </div>
+
             <p>Misalnya, jika jarak tiang 1 ke tiang 2 ke sisi kiri adalah 2 meter dan jarak tiang 3 ke tiang 4 ke sisi kanan adalah 2 meter, maka keseimbangan tiang adalah:</p>
-            <pre class="pre-code"><code>2 = 2</code></pre>
+                <div class="math-display">
+                <pre class="pre-code"><code>2 = 2</code></pre>
+                </div>
             <p>Dengan demikian, keseimbangan tiang agar tetap simetris di kedua sisi haruslah berjarak sama.</p>
+            </div>
 
             <h3>2.C Aspek Proporsi dan Skala dalam Rumah Adat Luwu</h3>
             <p>Proporsi pada Rumah Adat Langkanae terlihat dari keseimbangan ukuran antara tinggi, lebar, dan panjang bangunan. Para pengrajin tradisional memiliki kepekaan dalam menjaga rasio tersebut agar rumah tampak kokoh dan proporsional. Prinsip proporsi ini juga menunjukkan pemahaman matematis masyarakat Luwu terhadap perbandingan dan harmoni bentuk, yang secara turun-temurun dijaga dalam konstruksi rumah adat.</p>
@@ -321,25 +347,32 @@
             </table>
 
             <h4>Contoh Proporsi dan Skala Ukuran Anak Tangga </h4>
-            <p>Untuk mendesain ukuran anak tangga agar seimbang, kita dapat menggunakan konsep perbandingan aritmatika anak tangga. Dengan menggunakan rumus keseimbangan dan sudut nyaman, kita bisa mengetahui hubungan antara tinggi dan lebar tapak yang menghasilkan sudut kemiringan yang ideal:</p>
             <div class="math-formula">
+            <p>Untuk mendesain ukuran anak tangga agar seimbang, kita dapat menggunakan konsep perbandingan aritmatika anak tangga. Dengan menggunakan rumus keseimbangan dan sudut nyaman, kita bisa mengetahui hubungan antara tinggi dan lebar tapak yang menghasilkan sudut kemiringan yang ideal:</p>
+                <div class="math-display">
                 <pre><code>K = (2 * r) + t</code></pre>
+                </div>
                 <p>Dimana:</p>
                 <ul>
                     <li><strong>K</strong> = Nilai konstan yang idealnya berada di kisaran 60 cm hingga 65 cm. Kisaran ini mencerminkan panjang langkah normal manusia di permukaan datar.</li>
                     <li><strong>r</strong> = Tinggi injakan (vertikal) anak tangga.</li>
                     <li><strong>t</strong> = Lebar tapak (horizontal) anak tangga.</li>
                 </ul>
+                <div class="math-display">
                 <pre><code>L = r + t</code></pre>
+                </div>
                 <p>Dimana:</p>
                 <ul>
                     <li><strong>L</strong> = Nilai konstan yang idealnya berada di kisaran 40 cm hingga 46 cm.</li>
                 </ul>
-            </div> 
+
             <p>Misalnya, jika tinggi injakan adalah 15 cm dan lebar tapak adalah 30 cm, maka keseimbangan tiang adalah:</p>
-            <pre class="pre-code"><code>K = (2 * 15) + 30 = 60 cm</code></pre>
-            <pre class="pre-code"><code>L = 15 + 30 = 45 cm</code></pre>
+                <div class="math-display">
+                <pre class="pre-code"><code>K = (2 * 15) + 30 = 60 cm</code></pre>
+                <pre class="pre-code"><code>L = 15 + 30 = 45 cm</code></pre>
+                </div>
             <p>Dengan demikian, arsitek tradisional Luwu memastikan bahwa tangga yang menghubungkan kolong dengan badan rumah memiliki irama langkah yang konsisten.</p>
+            </div> 
 
             <h3>2.D Aspek Pola dan Ornamen Ukiran Rumah Adat Luwu</h3>
             <p>Pola dalam Rumah Adat Langkanae tampak melalui pengulangan bentuk dan motif pada berbagai elemen seperti ukiran, ventilasi, dan susunan lantai. Pola ini tidak hanya memperindah tampilan rumah, tetapi juga mencerminkan penerapan konsep matematika berupa translasi, pengulangan, dan keteraturan. Dalam budaya Luwu, pola memiliki makna filosofis tentang kesinambungan hidup dan ketertiban sosial.</p>
@@ -351,21 +384,26 @@
             </div>
 
             <h4>Contoh Penghitungan Ornamen Ukiran pada Serambi</h4>
-            <p>Ornamen ukiran pada serambi memiliki pola berulang berbentuk belah ketupat. Untuk menghitung luas belah ketupat, kita dapat menggunakan rumus luas belah ketupat:</p>
             <div class="math-formula">
+            <p>Ornamen ukiran pada serambi memiliki pola berulang berbentuk belah ketupat. Untuk menghitung luas belah ketupat, kita dapat menggunakan rumus luas belah ketupat:</p>
+                <div class="math-display">
                 <pre><code>L = 1/2 * d1 * d2</code></pre>
+                </div>
                 <p>Dimana:</p>
                 <ul>
                     <li><strong>L</strong> = Luas Belah Ketupat</li>
                     <li><strong>d1</strong> = diagonal 1</li>
                     <li><strong>d2</strong> = diagonal 2</li>
                 </ul>
-            </div>
+            
             <p>Misalnya, jika diagonal 1 adalah 20 centimeter dan diagonal 2 adalah 15 centimeter, maka:</p>
+            <div class="math-display">
             <pre class="pre-code"><code>L = 1/2 * 20 * 15 = 150 centimeter kuadrat</code></pre>
+            </div>
             <p>Dengan demikian, luas belah ketupat adalah 150 centimeter kuadrat.</p>
+            </div>
 
-            <h3>2. e Aspek Kesebangunan dan Perbandingan Ukuran Rumah Adat Luwu</h3>
+            <h3>2.E Aspek Kesebangunan dan Perbandingan Ukuran Rumah Adat Luwu</h3>
             <p>Kesebangunan terlihat dari keserupaan bentuk antar elemen arsitektur seperti jendela, pintu, dan tiang dengan ukuran berbeda namun tetap proporsional. Hal ini menunjukkan pemahaman masyarakat terhadap konsep geometri skala dan perbandingan. Secara filosofis, kesebangunan menggambarkan nilai kesetaraan, kerja sama, dan peran yang seimbang dalam kehidupan keluarga maupun adat di Luwu.</p>
             
             <h4>Contoh Panorama 360°</h4>
