@@ -1,66 +1,96 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>MathJax List Left-Aligned Example</title>
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$', '$$'], ['\\[', '\\]']]
-        }
-      };
-    </script>
-    <script id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-    </script>
-    
-    <style>
-        /* *** THE KEY CSS TO ALIGN EQUATIONS LEFT ***
-        
-        1. Target the <ul> to ensure the list wrapper respects the left alignment.
-        2. Target the MathJax display container (MathJax_Display) 
-           and force its text alignment to the left.
-        */
-        .left-list {
-            list-style-type: disc;
-            font-family: Arial, sans-serif;
-            margin-top: 20px;
-            /* Ensure the <li> contents start on the left */
-            text-align: left; 
-        }
-        
-        /* This class targets the internal MathJax output container 
-        that is usually responsible for centering the formula. 
-        We use !important to override any default MathJax centering rules. 
-        */
-        .left-list .MathJax_Display {
-            text-align: left !important;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projective Geometry Rumah Adat Luwu</title>
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #e5e5e5;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+    }
 
-        li {
-            margin-bottom: 15px;
-        }
-    </style>
+    /* Tombol di pojok kiri atas */
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      background-color: #00c8ff;
+      color: #0d1117;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 200, 255, 0.3);
+    }
+
+    .back-button:hover {
+      background-color: #008cbf;
+      box-shadow: 0 6px 16px rgba(0, 200, 255, 0.45);
+      transform: translateY(-2px);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #00c8ff;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #00c8ff;
+      padding-bottom: 8px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111827;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      margin-bottom: 25px;
+    }
+
+    .image-container img {
+      width: 90%;
+      max-width: 700px;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: #888;
+      text-align: center;
+      position: fixed;
+      bottom: 15px;
+    }
+  </style>
 </head>
 <body>
 
-    <h2>List of Left-Aligned Mathematical Functions</h2>
-    
-    <ul class="left-list">
-        <li>
-            The variance ($\sigma^2$) is calculated as: 
-            $$ \sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2 $$
-        </li>
-        <li>
-            The Gaussian integral is defined by:
-            $$ \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi} $$
-        </li>
-        <li>
-            The derivative definition uses a limit function:
-            $$ f'(x) = \lim_{\Delta x \to 0} \frac{\sin(x + \Delta x) - \sin(x)}{\Delta x} $$
-        </li>
-    </ul>
+  <!-- Tombol kiri atas -->
+  <button class="back-button" onclick="window.location.href='index.html'">← Kembali</button>
+
+  <h1>Projective Geometry Balla Lompoa</h1>
+
+  <div class="image-container">
+    <img src="assets/images/projective_geometry_balla_lompoa.jpg" alt="Projective Geometry Balla Lompoa">
+  </div>
+
+  <footer>© 2025 Etnomatematika Rumah Adat Balla' Lompoa</footer>
 
 </body>
 </html>
